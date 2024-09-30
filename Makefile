@@ -35,7 +35,7 @@ ifeq ($(DO_ALLDEP),1)
 endif # DO_ALLDEP
 
 # slidy
-SLIDY_SRC:=$(shell find src -name "*.txt")
+SLIDY_SRC:=$(shell find src -type f -and -name "*.txt")
 SLIDY_BAS:=$(basename $(SLIDY_SRC))
 SLIDY_PDF:=$(addprefix out/,$(addsuffix .pdf,$(SLIDY_BAS)))
 
