@@ -29,11 +29,6 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-# dependency on the makefile itself
-ifeq ($(DO_ALLDEP),1)
-.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
-endif # DO_ALLDEP
-
 # slidy
 SLIDY_SRC:=$(shell find src -type f -and -name "*.txt")
 SLIDY_BAS:=$(basename $(SLIDY_SRC))
@@ -75,9 +70,15 @@ clean_hard:
 ############
 # patterns #
 ############
-# slidy
 $(SLIDY_PDF): out/%.pdf: %.txt
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
 	$(Q)a2x -f pdf $<
 	$(Q)mv $(basename $<).pdf $@
+
+##########
+# alldep #
+##########
+ifeq ($(DO_ALLDEP),1)
+.EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
+endif # DO_ALLDEP
