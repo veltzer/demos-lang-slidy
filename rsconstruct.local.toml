@@ -1,0 +1,8 @@
+# Repo-specific overlay. Deep-merged over the canonical rsconstruct.toml.
+
+# The Makefile rendered every src/*.txt AsciiDoc slidy source to PDF with
+# "a2x -f pdf", placing results under out/src/. Same tool, same layout here.
+[processor.a2x]
+src_dirs = ["src"]
+args = ["-f", "pdf"]
+output_dir = "out/src"
