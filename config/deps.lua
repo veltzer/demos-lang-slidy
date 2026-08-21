@@ -1,8 +1,6 @@
-"""
-os level dependencies for this project
-"""
+-- os level dependencies for this project
 
-packages=[
+PACKAGES = {
     "unoconv",
     "python3-uno",
     "markdown",
@@ -26,8 +24,8 @@ packages=[
     "qpdf",
     "poppler-utils",
     "virtualenvwrapper",
-]
+}
 
-packages_docs = [
+PACKAGES_DOCS = {
     "sketch-doc",
-]
+}
