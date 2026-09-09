@@ -1,8 +1,5 @@
 # rsconstruct build configuration for this repository.
 
-[processor.luacheck]
-src_dirs = ["config"]
-
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
 [processor.taplo]
