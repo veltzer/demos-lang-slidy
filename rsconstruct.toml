@@ -1,9 +1,13 @@
 # rsconstruct build configuration for this repository.
 
+[build]
+# src_dirs entries name directories; "." (the whole tree) is a config error
+reject_dot_src_dirs = true
+
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
 [processor.taplo]
-src_dirs = ["."]
+src_files = [".rumdl.toml", "rsconstruct.toml"]
 
 # The Makefile rendered every src/*.txt AsciiDoc slidy source to PDF with
 # "a2x -f pdf", placing results under out/src/. Same tool, same layout here.
