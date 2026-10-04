@@ -6,21 +6,21 @@ reject_dot_src_dirs = true
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
-[processor.taplo]
+[processor.checker.taplo]
 src_files = [".rumdl.toml", "rsconstruct.toml"]
 
 # The Makefile rendered every src/*.txt AsciiDoc slidy source to PDF with
 # "a2x -f pdf", placing results under out/src/. Same tool, same layout here.
-[processor.a2x]
+[processor.generator.a2x]
 src_dirs = ["src"]
 args = ["-f", "pdf"]
 output_dir = "out/src"
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl]
+[processor.checker.rumdl]
 src_files = ["README.md"]
